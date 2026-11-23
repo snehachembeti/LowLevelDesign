@@ -6,6 +6,7 @@ public class Player {
 
     public Player(String name, DiscColor color)
     {
+        if(color == null) throw new IllegalArgumentException("Player color must not be null");
         this.name = name;
         this.color = color;
     }

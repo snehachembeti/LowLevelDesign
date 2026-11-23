@@ -18,6 +18,13 @@ public class Game
 
     Game(Player player1, Player player2)
     {
+        if(player1 == null || player2 == null)
+            throw new IllegalArgumentException("Both players are required");
+        if(player1.getColor() == null || player2.getColor() == null)
+            throw new IllegalArgumentException("Player colors must not be null");
+        if(player1.getColor() == player2.getColor())
+            throw new IllegalArgumentException("Players must have different colors");
+
         this.board = new Board();
         this.player1 = player1;
         this.player2 = player2;

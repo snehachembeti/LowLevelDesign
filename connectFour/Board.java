@@ -35,7 +35,7 @@ public class Board {
 
     public int placeDisc(int colm, DiscColor disc)
     {
-        if(canPlace(colm) == false)  return -1;
+        if(disc == null || canPlace(colm) == false)  return -1;
         for(int row = rows - 1; row >= 0; row--)
         {
             if(grid[row][colm] == null)
@@ -58,7 +58,7 @@ public class Board {
 
     public boolean checkWin(int row, int colm, DiscColor color)
     {
-        if(inBound(row, colm) == false || grid[row][colm] != color) return false;
+        if(color == null || inBound(row, colm) == false || grid[row][colm] != color) return false;
 
         int[][] directions = new int[][] {{1, 0}, {0, 1}, {1, 1}, {-1, 1}};
 
